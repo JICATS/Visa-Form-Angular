@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row">
+        <div class="col s8 offset-2">
+            <div class="card-panel teal lighten-2">
+                <h3 class="center white-text">Passport Photo</h3>
+            </div>
+            <form #imageForm = ngForm  >
+                
+                    <div style="display:inline-block;vertical-align:top;">
+                        
+                        <img [src]="imageUrl" style="width: 250px; height: 200px ">
+                        
+                            
+                            <input type="file" #Image accept="image/*" (change)="handleFileInput($any($event.target).files)">
+                            
+                            <button type="submit" class="btn" (click)="ver()"  >Submit</button>
+                    </div>
+                    <form class="card-panel teal lighten-2" >
+                        <h4>Passenger Data</h4>
+                        <div style="display: inline-block ;">
+                            <br>
+                            <p>Full Name: <strong>{{binName}}</strong>   Last Name: <strong>{{binLastName}}</strong></p>
+                            <br>
+                            
+                            <p>Identification: <strong>{{binIdentification}}</strong>   Passport: <strong>{{binPassport}}</strong> </p>
+                            <br>
+                            
+                            <p>Country: <strong>{{binCountry}}</strong>   Nacionality: <strong>{{binNacionality}}</strong> </p>
+                            <br>
+                            
+                            <p>Gender: <strong>{{binGendre}}</strong>   Birth Date: <strong>{{binBirthday}}</strong> </p>
+                            <br>
+                            
+                            <p>Issue Date: <strong>{{binIssueDate}}</strong>   Expire Date: <strong>{{binExpireDate}}</strong> </p>
+                            
+                            
+
+                        </div>
+                    </form>
+                    
+                    
+
+                    <div class="card">
+                        <img src="" alt="">
+                    </div>
+                
+                    <div class="form-control">
+                        <label for="name">Full Name</label>
+                        
+                        <input type="text" [(ngModel)]="binName" placeholder="Your Full Name Here" name=binName >
+                        
+                    </div>
+                    <div class="form-control">
+                        <label for="lastname"> Last Name</label>
+                        <input type="text" [(ngModel)]="binLastName" placeholder="Your Last Name Here" name="binLastName">
+                    </div>
+                    <div class="form-control">
+                        <label for="identification"> Identification</label>
+                        <input type="number" [(ngModel)]="binIdentification" placeholder="Identification Number Here"name="binIdetification">
+                    </div>
+                    <div class="form-control">
+                        <label for="passport"> Passport </label>
+                        <input type="text" [(ngModel)]="binPassport" placeholder="Your passport number Here"name="binPassport">
+                    </div>
+                    <div class="form-control">
+                        <label for="country"> Country</label>
+                        <input type="text"[(ngModel)]="binCountry" placeholder="Where you live?" name="binCountry">
+                    </div>
+                    <div class="form-control">
+                        <label for="nacionality"> Nationality</label>
+                        <input type="text"[(ngModel)]="binNacionality" placeholder="Where are you from"name="binNationality">
+                    </div>
+                    <div class="form-control">
+                        <label for="gendre"> Gender</label>
+                        <select name="binGendre"[(ngModel)]="binGendre">
+                            <option value="Female">Female</option>
+                            <option value="Male" selected>Male</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        
+                    </div>
+                    <div class="form-control">
+                        <label for="birthday"> Birth day</label>
+                        <input type="date"[(ngModel)]="binBirthday" placeholder="Date here"name="binBirthday">
+                    </div>
+                    <div class="form-control">
+                        <label for="issueDate"> Date Issue</label>
+                        <input type="date"[(ngModel)]="binIssueDate" placeholder="Date here"name="binIssueDate">
+                    </div>
+                    <div class="form-control">
+                        <label for="expireDate"> Date Expire</label>
+                        <input type="date"[(ngModel)]="binExpireDate" placeholder="Date here"name="binExpireDate">
+                    </div>
+                    <input type="submit" value="Save New Passport" class="btn btn-block">
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
